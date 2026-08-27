@@ -9,7 +9,7 @@
 ![Econs UFJF](https://img.shields.io/badge/Econs-UFJF-1e4a8a?style=flat-square)
 ![Fonte](https://img.shields.io/badge/Fonte-IBGE-5a6070?style=flat-square)
 ![Anos](https://img.shields.io/badge/Anos-2012–2026-c9a84c?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Harmonizada-2e7d32?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Disponível-2e7d32?style=flat-square)
 
 </div>
 
@@ -26,7 +26,7 @@ A PNADC é o levantamento domiciliar por amostra do IBGE que substituiu a antiga
 | | |
 |---|---|
 | **Anos disponíveis** | 2012–2026 (série corrente do IBGE) |
-| **Anos harmonizados** | 2012–2026 · 2026 com apenas 1º e 2º trimestres publicados até o momento |
+| **Cobertura completa** | 2012–2026 · 2026 com apenas 1º e 2º trimestres publicados até o momento |
 | **Periodicidade** | Trimestral |
 | **Nível geográfico** | Brasil / UF |
 | **Fonte** | [IBGE — PNADC, microdados](https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html) |
