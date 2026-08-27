@@ -29,6 +29,8 @@ Os dados brutos **não estão neste repositório** — são grandes demais para 
 econsdados/
 ├── educacao/
 │   └── saeb/          ← Avaliação da Educação Básica (INEP)
+├── ibge/
+│   └── pnadc/         ← Pesquisa Nacional por Amostra de Domicílios Contínua (IBGE)
 ├── saude/
 │   ├── sinasc/        ← Nascidos Vivos (DataSUS)
 │   └── sihsus/        ← Internações Hospitalares (DataSUS)
@@ -44,6 +46,7 @@ econsdados/
 |---|---|---|---|
 | [SAEB](educacao/saeb/README.md) | Educação | 1995–2023 | ✅ Disponível |
 | [SINASC](saude/sinasc/README.md) | Saúde | 1996–2024 | ✅ Disponível |
+| [PNADC](ibge/pnadc/README.md) | IBGE | 2012–2026 | ✅ Disponível |
 | SIHSUS | Saúde | — | 🔄 Em preparação |
 | RAIS | Mercado de trabalho | — | 🔄 Em preparação |
 | CAGED | Mercado de trabalho | — | 🔄 Em preparação |
