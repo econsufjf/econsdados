@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="../assets/wordmark.svg" alt="EconsDados" height="60"/>
+<img src="../../assets/wordmark.svg" alt="EconsDados" height="60"/>
 
 # SAEB
 
