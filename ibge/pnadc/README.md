@@ -54,6 +54,22 @@ Bases/
 
 ---
 
+## Divulgação Anual (pesquisas suplementares)
+
+A amostra da PNADC é rotativa: cada domicílio é entrevistado uma vez por trimestre, por 5 trimestres seguidos (**visitas**), depois sai da amostra. A divulgação Trimestral (acima) é a pesquisa básica, investigada em toda a amostra, todo trimestre. O IBGE também publica uma divulgação **Anual**, com pesquisas **suplementares** sobre temas que não são investigados o tempo todo — Educação, Habitação, Migração, entre outros.
+
+Cada tema suplementar é investigado só numa subamostra específica, definida de uma de duas formas (o IBGE decide qual por tema):
+
+- **Por Visita** — o tema foi investigado nos domicílios que estavam numa visita específica (1ª a 5ª), acumulados ao longo dos trimestres do ano.
+- **Por Trimestre** — o tema foi investigado em toda a amostra de um trimestre civil específico (ex: Educação é sempre no 2º trimestre).
+
+Não são duas formas de acessar os mesmos dados — são dois métodos de subamostragem diferentes, e cada tema suplementar usa apenas um deles. O quadro oficial "PNAD Contínua – Pesquisas Suplementares Anuais" (ver referências) indica qual método se aplica a cada tema, em cada ano.
+
+> [!NOTE]
+> A base organizada pelo laboratório cobre, por enquanto, apenas a via **por Trimestre**. A via por Visita ainda não foi processada.
+
+---
+
 ## Principais variáveis
 
 | Categoria | Variável | Descrição |
@@ -92,6 +108,7 @@ A base tem centenas de colunas (identificação, características pessoais, trab
 - 📄 [Dicionário de variáveis — IBGE](https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html)
 - 🌐 [Pacote PNADcIBGE — CRAN](https://cran.r-project.org/package=PNADcIBGE)
 - 🌐 [FTP de microdados — IBGE](ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/)
+- 📄 [LEIA-ME oficial — divulgação Anual (Visita vs. Trimestre)](https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Microdados/LEIA-ME.pdf)
 
 ---
 
