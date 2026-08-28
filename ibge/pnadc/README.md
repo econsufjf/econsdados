@@ -33,7 +33,9 @@ A PNADC é o levantamento domiciliar por amostra do IBGE que substituiu a antiga
 
 ---
 
-## A solução: importação padronizada
+## Divulgação Trimestral (indicadores correntes)
+
+Esta é a pesquisa básica da PNADC, investigada trimestralmente em toda a amostra — não os módulos suplementares (ver "Divulgação Anual" abaixo). É a fonte dos indicadores correntes de mercado de trabalho (desemprego, ocupação, rendimento).
 
 Toda a série é importada por uma rotina única em R, usando o pacote **oficial do IBGE**
 [`PNADcIBGE`](https://cran.r-project.org/package=PNADcIBGE), que baixa e lê os
@@ -63,7 +65,34 @@ Cada tema suplementar é investigado só numa subamostra específica, definida d
 - **Por Visita** — o tema foi investigado nos domicílios que estavam numa visita específica (1ª a 5ª), acumulados ao longo dos trimestres do ano.
 - **Por Trimestre** — o tema foi investigado em toda a amostra de um trimestre civil específico (ex: Educação é sempre no 2º trimestre).
 
-Não são duas formas de acessar os mesmos dados — são dois métodos de subamostragem diferentes, e cada tema suplementar usa apenas um deles. O quadro oficial "PNAD Contínua – Pesquisas Suplementares Anuais" (ver referências) indica qual método se aplica a cada tema, em cada ano.
+Não são duas formas de acessar os mesmos dados — são dois métodos de subamostragem diferentes, e cada tema suplementar usa apenas um deles. O quadro oficial "PNAD Contínua – Pesquisas Suplementares Anuais" (ver referências) indica qual método se aplica a cada tema, em cada ano — resumido abaixo:
+
+**Por Visita:**
+
+| Tema | Visita | Anos |
+|---|---|---|
+| Características adicionais do mercado de trabalho | 1 | 2012–2019, 2022–2024 |
+| Rendimento de outras fontes | 1 (e 5 em alguns anos) | 2012–2025 |
+| Características gerais dos moradores | 1 (5 em 2020/2021) | 2012–2025 |
+| Habitação | 1 | 2016–2019, 2022–2025 |
+| Outras formas de trabalho | 5 | 2016–2019, 2022–2024 |
+| Trabalho de crianças e adolescentes | 5 | 2016–2019, 2022–2024 |
+| Turismo | 2 | 2019–2021, 2023–2024 |
+
+**Por Trimestre:**
+
+| Tema | Trimestre | Anos |
+|---|---|---|
+| Educação | 2 | 2016–2019, 2022–2025 |
+| TIC (Tecnologia da Informação e Comunicação) | 4 | 2016–2019, 2021–2025 |
+| Sensação de segurança | 4 | 2021 |
+| Furto e roubo | 4 | 2021 |
+| Atenção primária à saúde | 2 | 2022 |
+| Pessoas com Deficiência | 3 | 2022 |
+| Teletrabalho | 4 | 2022 |
+| Trabalho por meio de plataformas digitais | 4 | 2022, 2024 |
+| Segurança Alimentar | 4 | 2023, 2024 |
+| COVID-19 | 1 | 2023 |
 
 > [!NOTE]
 > A base organizada pelo laboratório cobre, por enquanto, apenas a via **por Trimestre**. A via por Visita ainda não foi processada.
@@ -109,6 +138,7 @@ A base tem centenas de colunas (identificação, características pessoais, trab
 - 🌐 [Pacote PNADcIBGE — CRAN](https://cran.r-project.org/package=PNADcIBGE)
 - 🌐 [FTP de microdados — IBGE](ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/)
 - 📄 [LEIA-ME oficial — divulgação Anual (Visita vs. Trimestre)](https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Microdados/LEIA-ME.pdf)
+- 📄 [Quadro de pesquisas suplementares anuais 2012–2025 — IBGE](https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Microdados/PNADC_Pesquisas_Suplementares_Anuais_20260702.pdf)
 
 ---
 
