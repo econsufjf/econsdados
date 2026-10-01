@@ -31,6 +31,8 @@ econsdados/
 │   └── saeb/          ← Avaliação da Educação Básica (INEP)
 ├── ibge/
 │   └── pnadc/         ← Pesquisa Nacional por Amostra de Domicílios Contínua (IBGE)
+├── mercado_de_trabalho/
+│   └── rais/          ← Relação Anual de Informações Sociais (MTE)
 ├── saude/
 │   ├── sinasc/        ← Nascidos Vivos (DataSUS)
 │   └── sihsus/        ← Internações Hospitalares (DataSUS)
@@ -48,7 +50,7 @@ econsdados/
 | [SINASC](saude/sinasc/README.md) | Saúde | 1996–2024 | ✅ Disponível |
 | [PNADC](ibge/pnadc/README.md) | IBGE | 2012–2026 | ✅ Disponível |
 | SIHSUS | Saúde | — | 🔄 Em preparação |
-| RAIS | Mercado de trabalho | — | 🔄 Em preparação |
+| [RAIS](mercado_de_trabalho/rais/README.md) | Mercado de trabalho | 2018 (em andamento) | 🟡 Harmonização em andamento |
 | CAGED | Mercado de trabalho | — | 🔄 Em preparação |
 
 ---
