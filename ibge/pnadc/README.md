@@ -95,7 +95,31 @@ Não são duas formas de acessar os mesmos dados — são dois métodos de subam
 | COVID-19 | 1 | 2023 |
 
 > [!NOTE]
-> A base organizada pelo laboratório cobre, por enquanto, apenas a via **por Trimestre**. A via por Visita ainda não foi processada.
+> A base organizada pelo laboratório cobre as duas vias — **por Trimestre** e **por Visita**.
+
+---
+
+## Como carregar no R
+
+Na rede da UFJF, a base pode ser lida direto do servidor do Econs com o pacote [`econsdados`](../../packages/econsdados/README.md):
+
+```r
+library(econsdados)
+
+pnadc_disponivel()                                  # períodos disponíveis
+
+# Trimestral
+pnad <- carregar_pnadc(2025, trimestre = 1)
+pnad <- carregar_pnadc(2025, trimestre = 1:4,       # vários trimestres são empilhados
+                       colunas = c("UF", "V1028", "VD4002"))
+
+# Anual (pesquisas suplementares): por visita OU por trimestre
+pnad <- carregar_pnadc_anual(2024, visita = 1)
+pnad <- carregar_pnadc_anual(2024, trimestre = 2)  # ex.: Educação
+```
+
+> [!WARNING]
+> O peso amostral muda conforme o arquivo: **`V1028`** na divulgação trimestral e na anual por trimestre, **`V1032`** na anual por visita.
 
 ---
 
@@ -113,7 +137,8 @@ Não são duas formas de acessar os mesmos dados — são dois métodos de subam
 | Trabalho | `VD4002` | Condição de ocupação (ocupado / desocupado) |
 | Trabalho | `VD4008` | Posição na ocupação |
 | Trabalho | `VD4020` | Rendimento habitual do trabalho principal |
-| Peso amostral | `V1028` | Peso do domicílio e das pessoas |
+| Peso amostral | `V1028` | Peso do domicílio e das pessoas (trimestral e anual por trimestre) |
+| Peso amostral | `V1032` | Peso do domicílio e das pessoas (anual por visita) |
 
 <details>
 <summary>Ver lista completa de variáveis</summary>

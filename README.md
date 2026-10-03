@@ -19,7 +19,31 @@ O **EconsDados** reúne bases de dados públicas utilizadas nas pesquisas do ECO
 - **Harmonização** — o que foi feito para compatibilizar os dados ao longo do tempo
 - **Principais variáveis** — dicionário resumido com as variáveis mais usadas
 
-Os dados brutos **não estão neste repositório** — são grandes demais para o GitHub. Cada README indica onde baixá-los e como reproduzir o processamento.
+Os dados brutos **não estão neste repositório** — são grandes demais para o GitHub. Cada README indica onde baixá-los e como reproduzir o processamento. Os dados **tratados** podem ser lidos direto do servidor do laboratório pelo pacote R `econsdados` (abaixo).
+
+---
+
+## Pacote R
+
+O pacote [`econsdados`](packages/econsdados/README.md) carrega as bases tratadas direto do servidor do Econs, sem precisar baixar arquivos.
+
+**Requisitos:** estar na rede da UFJF, usar Windows e ter usuário e senha do servidor (peça ao laboratório).
+
+```r
+remotes::install_github("econsufjf/econsdados", subdir = "packages/econsdados")
+library(econsdados)
+
+conectar_econs()      # só na primeira vez em cada computador
+
+pnadc_disponivel()    # períodos disponíveis
+pnad <- carregar_pnadc(2025, trimestre = 1:4,
+                       colunas = c("UF", "V1028", "VD4002"))
+```
+
+| Base | Funções |
+|---|---|
+| PNADC | `carregar_pnadc()`, `carregar_pnadc_anual()`, `pnadc_disponivel()` |
+| RAIS | em breve |
 
 ---
 
@@ -33,6 +57,8 @@ econsdados/
 │   └── pnadc/         ← Pesquisa Nacional por Amostra de Domicílios Contínua (IBGE)
 ├── mercado_de_trabalho/
 │   └── rais/          ← Relação Anual de Informações Sociais (MTE)
+├── packages/
+│   └── econsdados/    ← pacote R para carregar as bases do servidor do Econs
 ├── saude/
 │   ├── sinasc/        ← Nascidos Vivos (DataSUS)
 │   └── sihsus/        ← Internações Hospitalares (DataSUS)
