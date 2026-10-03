@@ -105,7 +105,7 @@ Nomes já harmonizados (iguais em todos os anos, quando o reprocessamento daquel
 | Vínculo | `tipo_admissao` | Tipo de admissão |
 | Vínculo | `motivo_deslig` | Motivo do desligamento |
 | Vínculo | `tempo_emprego` | Tempo de emprego |
-| Remuneração | `rem_dez_nom` | Remuneração de dezembro (valor nominal) |
+| Remuneração | `rem_dez_nom` | Remuneração de dezembro (valor nominal) — ⚠️ sem remuneração é `0` até 2022 e `NA` desde 2023 ([ver aviso](#observações-e-limitações)) |
 | Remuneração | `rem_media_nom` | Remuneração média no ano (valor nominal) |
 | Remuneração | `salario_contratual` | Salário contratual |
 | Estabelecimento | `tipo_estab` | Tipo de estabelecimento (código: CNPJ/CEI) |
@@ -122,6 +122,17 @@ A base de vínculos tem campos adicionais de localização (bairros de SP/Fortal
 ---
 
 ## Observações e limitações
+
+> [!WARNING]
+> **Remuneração de dezembro em valor nominal (`rem_dez_nom`): o tratamento de quem não tem remuneração no mês muda em 2023.** Até 2022, esses vínculos aparecem com `rem_dez_nom = 0`; de 2023 em diante, aparecem com `rem_dez_nom` ausente (`NA`). Não é erro da base — é como o MTE passou a entregar o campo —, mas torna a média incomparável entre os dois períodos: os zeros entram na média até 2022 e, a partir de 2023, ficam de fora.
+>
+> | | 2018–2022 | 2023 em diante |
+> |---|---|---|
+> | `rem_dez_nom` de quem não tem remuneração em dezembro | `0` | `NA` |
+> | `rem_dez_sm`, `rem_media_nom`, `rem_media_sm` | `0` | `0` (sem mudança) |
+> | Parcela dos vínculos nessa situação | 29,6% (2018) a 35,9% (2022) | 38,6% (2023) a 41,8% (2025) |
+>
+> Para comparar médias de `rem_dez_nom` entre os dois períodos, use o mesmo critério nos dois — por exemplo, tratar `NA` como `0` a partir de 2023, ou excluir os zeros dos anos anteriores. `rem_dez_sm` (em salários mínimos) não tem essa quebra e identifica os mesmos casos em todos os anos (`rem_dez_sm == 0`). Os anos anteriores a 2018 ainda não foram conferidos para `rem_dez_nom` (a variável existe a partir de 1999).
 
 > [!NOTE]
 > - A harmonização de nomes/tipos só está concluída para **2018** — os demais anos ainda estão no formato original da fonte (ver [status](#status-da-harmonização)).
