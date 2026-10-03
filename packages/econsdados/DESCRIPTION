@@ -1,0 +1,13 @@
+Package: econsdados
+Title: Acesso às Bases de Dados do Econs/UFJF
+Version: 0.0.1
+Authors@R: person("Econs", "UFJF", email = "igorvprocopio@gmail.com", role = c("aut", "cre"))
+Description: Funções para carregar as bases de dados tratadas do Laboratório de
+    Estudos Econômicos (Econs/UFJF) diretamente do servidor do laboratório,
+    acessível na rede da UFJF.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    askpass,
+    data.table,
+    fst
